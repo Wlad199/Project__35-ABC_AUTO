@@ -1,0 +1,39 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+// button ====================================================================================================//
+
+.button {
+	border-radius: 6px;
+	background-color: $red;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+	transition: all 0.3s ease 0s;
+	&:hover{
+		background-color: #A90100;
+	}
+}
+
+
+//* underline ====================================================================================================//
+
+.underline{
+	position: relative;
+	&::after{
+		content: '';
+		position: absolute;
+		bottom: -1px;
+		left: 50%;
+		right: 50%;
+		width: 0;
+		height: 1px;
+		background-color: $gray;
+		transition: all 0.2s ease 0s;
+	}
+	&:hover::after{
+		width: 100%;
+		left: 0%;
+		right: 0;
+	}
+}
