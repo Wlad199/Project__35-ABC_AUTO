@@ -1,6 +1,259 @@
 .page{
 	margin-top: 190px;
+	padding-bottom: 150px;	//!!!
 	@media (max-width: 992px) {
 		margin-top: 70px;
 	}
+}
+
+//* main-screen ====================================================================================================//
+
+.main-screen {
+		&__box {
+			position: relative;
+		}
+		&__item {
+			@include adaptiveValue("padding-top", 70, 30);
+			@include adaptiveValue("padding-bottom", 260, 200);
+		}
+	}
+	.item-main-screen {
+}
+.item-main-screen {
+	position: relative;
+	&__image_01{
+		@media (max-width: 400px) {
+			display: none;
+		}
+	}
+	position: relative;
+	&__image_02{
+		@media (min-width: 400px) {
+			display: none;
+		}
+	}
+		&__body {
+			max-width: 750px;
+			position: relative;
+			z-index: 1;
+		}
+		&__image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&__label {
+			font-weight: 700;
+			background-color: $red;
+			color: #fff;
+			display: inline-block;
+			padding: 5px 12px;
+			border-radius: 33px;
+			@include adaptiveValue("margin-bottom", 35, 5);
+		}
+		&__title {
+			@include adaptiveValue("font-size", 60, 30);
+			font-weight: 700;
+			@include adaptiveValue("padding-bottom", 25, 5);
+		}
+		&__text {
+			@include adaptiveValue("font-size", 30, 18);
+			color: $gray;
+		}
+}
+
+//* selection ====================================================================================================//
+
+.selection {
+	@include adaptiveValue("padding-top", 40, 30);
+	&__container {
+	}
+	&__body {
+		display: flex;
+		gap: 30px;
+		@media (max-width: 992px) {
+			flex-direction: column;
+		}
+	}
+	&__marks {
+		flex: 0 1 auto;
+	}
+	&__select-auto {
+		flex: 0 0 490px;
+	}
+}
+
+//? marks-select =================//
+
+.marks-select {
+	user-select: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+	@media (max-width: 992px) {
+		margin: 0 -5px;
+	}
+	@media (max-width: 500px) {
+		margin: 0 2px;
+	}
+	&__item {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+		flex: 0 1 20%;
+		margin-bottom: 3px;
+		padding: 0 10px;
+		&._cheched{
+			color: $red;
+		}
+		@media (max-width: 1300px) {
+			flex: 0 1 25%;
+			gap: 10px;
+		}
+		@media (max-width: 1150px) {
+			flex: 0 1 33.333%;
+		}
+		@media (max-width: 992px) {
+			gap: 15px;
+			flex: 0 1 20%;
+		}
+		@media (max-width: 800px) {
+			flex: 0 1 25%;
+		}
+		@media (max-width: 670px) {
+			flex: 0 1 33.333%;
+		}
+		@media (max-width: 670px) {
+			margin-bottom: 12px;
+		}
+		@media (max-width: 500px) {
+			padding: 0 2px;
+		}
+	}
+	&__logo {
+		cursor: pointer;
+		@media (max-width: 500px) {
+			display: none;
+		}
+	}
+	&__name {
+		cursor: pointer;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+//? select-auto =================//
+
+.select-auto {
+	&__label {
+		@include adaptiveValue("font-size", 24, 20);
+		font-weight: 900;
+		@include adaptiveValue("padding-bottom", 25, 16);
+		&_m{
+			display: none;
+			@media (max-width: 992px) {
+				display: block;
+				padding-bottom: 0;
+			}
+		}
+	}
+	&__range {
+		margin-bottom: 75px;
+	}
+	&__select-lists {
+		display: flex;
+		gap: 15px;
+		justify-content: space-between;
+		@media (max-width: 500px) {
+			flex-wrap: wrap;
+		}
+	}
+	&__button {
+		height: 65px;
+		width: 100%;
+		margin-top: 25px;
+		@media (max-width: 992px) {
+			margin-top: 0;
+			flex: 0 1 33.333%;
+		}
+		@media (max-width: 500px) {
+			flex: 0 1 100%;
+			height: 50px;
+		}
+	}
+}
+.select-lists__item{
+	@media (max-width: 992px) {
+		flex: 0 1 33.333%;
+	}
+	@media (max-width: 500px) {
+		flex: 0 1 47%;
+	}
+
+}
+.select-price {
+}
+.select-transmission {
+}
+.button {
+}
+
+//? Noui =================//
+
+.range {
+	&__desc {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 10px;
+		font-size: 16px;
+	}
+	&__price {
+	}
+	&__value {
+		font-weight: 700;
+	}
+}
+
+.noUi-value.noUi-value-horizontal.noUi-value-large{
+	padding-top: 15px;
+}
+.noUi-horizontal{
+	height: 6px;
+	background-color: E1E1E1;
+	border: none;
+}
+.noUi-connect{
+	background-color: $red;
+}
+.noUi-horizontal .noUi-handle{
+	cursor: pointer;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	right: -7px;
+	top: -4px;
+	background-color: #A90100;
+	box-shadow: none;
+	border: none;
+	&::before, &::after{
+		display: none;
+	}
+	transition: all 0.3s ease 0s;
+}
+
+.noUi-marker-horizontal.noUi-marker-large{
+	height: 8px;
+}
+.noUi-marker-horizontal.noUi-marker{
+	width: 1px;
+}
+.noUi-value.noUi-value-horizontal.noUi-value-large {
+	padding-top: 6px;
+	font-size: 11px;
 }

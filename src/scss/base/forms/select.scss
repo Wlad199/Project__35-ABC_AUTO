@@ -5,6 +5,7 @@
 	// .select__body
 	&__body {
 		position: relative;
+		
 	}
 	// .select__title
 	&__title {
@@ -14,6 +15,7 @@
 		background-color: #fff;
 		cursor: pointer;
 		width: 100%;
+		height: 65px;
 		border-radius: 4px;
 	}
 	// .select__value
@@ -128,4 +130,82 @@
 // Тег
 ._select-tag {
 	cursor: pointer;
+}
+
+//* select-auto__select-lists =================//
+
+.select-lists{
+	&__item{
+	outline: 1px solid #E1E1E1;
+	height: 65px;
+	flex: 0 1 50%;
+	@include adaptiveValue("font-size", 16, 14);
+	@media (max-width: 500px) {
+		height: 40px;
+	}
+	}
+.select__value {
+}
+.select{
+	height: 100%;
+}
+.select__options{
+	top: 65px;
+	padding-top: 2px;
+	@media (max-width: 500px) {
+		top: 40px;
+	}
+}
+.select__option{
+	&:hover{
+		color: $red;
+		background-color: #d2d2d2;
+	}
+}
+.select__content{
+	position: relative;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 4px;
+		right: 0;
+		width: 1px;
+		height: 10px;
+		background-color: #000;
+		transform: rotate(45deg);
+		transition: all 0.3s ease 0s;
+	}
+	&::before{
+		content: '';
+		position: absolute;
+		top: 4px;
+		right: 7px;
+		width: 1px;
+		height: 10px;
+		background-color: #000;
+		transform: rotate(-45deg);
+		transition: all 0.3s ease 0s;
+	}
+}
+.select._select-open .select__content{
+	&:after{
+		//transform: rotate(-225deg);
+		transform: rotate(-135deg);
+	}
+	&:before{
+		//transform: rotate(225deg);
+		transform: rotate(135deg);
+	}
+}
+.select__title{
+	@media (max-width: 500px) {
+		height: 40px;
+	}
+}
+.select__value{
+	padding: 0px;
+	padding-left: 10px;
+}
+
+
 }

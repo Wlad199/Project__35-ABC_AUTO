@@ -94,6 +94,7 @@ body._lock {
 .header {
 	position: fixed;
 	width: 100%;
+	z-index: 50;
 	&__container {
 	}
 	&__top {
@@ -224,7 +225,7 @@ body._lock {
 	}
 	&__logo {
 		img{
-			transition: all 0.3s ease 0s;
+			//transition: all 0.3s ease 0s;
 			max-width: 100%;
 			@media (max-width: 1100px) {
 				max-width: 150px;
@@ -364,13 +365,40 @@ body._lock {
 			z-index: 5;
 		}
 		@media (max-width: 400px) {
-			gap: 15px;
+			gap: 20px;
 		}
 	}
 	&__pic {
+		svg path{
+			transition: all 0.3s ease 0s;
+		}
+		&:hover path{
+			stroke: #A90100;
+		}
 	}
 }
-.menu-link {
+.item-counter {
+	position: relative;
+	&::after{
+		position: absolute;
+		top: -9px;
+		right: -13px;
+		background-color: $red;
+		font-size: 12px;
+		padding: 1px 5px;
+		color: #fff;
+		border-radius: 15px;
+		transition: all 0.3s ease 0s;
+	}
+	&_like::after{
+		content: '10';
+	}
+	&_rating::after{
+		content: '14';
+	}
+	&:hover:after{
+		background-color: #A90100;
+	}
 }
 .call_second{
 	@media (max-width: 992px) {
@@ -394,6 +422,8 @@ body._lock {
 		}
 	}
 }
+
+// ? =================//
 
 .header._header-scroll{
 	@media (min-width: 992px) {

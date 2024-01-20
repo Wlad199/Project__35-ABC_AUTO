@@ -2,8 +2,11 @@
 // Для подключения/отключения стилей конкретного єлемента формы смотри base/forms/forms.scss
 @import "base/forms/forms";
 
+//nouiSlider
+@import "./libs/nouiSlider";
+
 // Стили слайдеров
-// @import "base/slick";
+ @import "base/slick";
 
 // Стили попапов
 // @import "base/popup";
