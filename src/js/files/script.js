@@ -63,4 +63,12 @@ snapSlider.noUiSlider.on('update', (values, handle) => {
 	}
 })
 
+// like in card goods ====================================================================================================//
+
+document.addEventListener('click', function (e) {
+	if (e.target.closest('.like-check')) {
+		e.target.closest('.like-check').classList.toggle('_active')
+	}
+})
+
 //  ====================================================================================================//

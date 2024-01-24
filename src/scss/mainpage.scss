@@ -82,7 +82,9 @@
 		flex: 0 1 auto;
 	}
 	&__select-auto {
-		flex: 0 0 490px;
+		@media (min-width: 992px) {
+			flex: 0 0 490px;
+		}
 	}
 }
 
@@ -196,12 +198,6 @@
 	}
 
 }
-.select-price {
-}
-.select-transmission {
-}
-.button {
-}
 
 //? Noui =================//
 
@@ -256,4 +252,315 @@
 .noUi-value.noUi-value-horizontal.noUi-value-large {
 	padding-top: 6px;
 	font-size: 11px;
+}
+
+
+//* cars ====================================================================================================//
+
+.cars {
+	@include adaptiveValue("padding-top", 80, 60);
+	&__container {
+	}
+	&__title {
+		text-align: center;
+		@include adaptiveValue("padding-bottom", 65, 25);
+		@media (max-width: 500px) {
+			text-align: left;
+		}
+	}
+	&__body {
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+		@media (max-width: 767px) {
+			//display: block;
+			flex-wrap: nowrap;
+			overflow: auto;
+		}
+		@media (max-width: 500px) {
+			padding-bottom: 15px;
+			&::-webkit-scrollbar{
+				background-color: #E1E1E1;
+				height: 5px;
+				position: absolute;
+			}
+			&::-webkit-scrollbar-thumb{
+				background-color: $red;
+			}
+		}
+	}
+	&__item {
+		flex: 0 1 calc(33.333% - 20px);
+		@media (max-width: 1150px) {
+			flex: 0 1 calc(50% - 15px);
+		}
+		@media (max-width: 767px) {
+			flex: 0 0 446px;
+		}
+		@media (max-width: 500px) {
+			flex: 0 0 290px;
+		}
+	}
+}
+
+//? item-cars =================//
+
+.item-cars {
+	border-radius: 25px;
+	border: 1px solid #E1E1E1;
+	background-color: #fff;
+	@include adaptiveValue("padding-top", 30, 20);
+	@include adaptiveValue("padding-bottom", 25, 20);
+	@include adaptiveValue("padding-right", 25, 20);
+	@include adaptiveValue("padding-left", 25, 20);
+	&__head {
+	}
+	&__profit {
+	}
+	&__price {
+	}
+	&__features {
+		display: flex;
+		flex-wrap: wrap;
+		//justify-content: space-between;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 5px;
+		@include adaptiveValue("margin-bottom", 20, 15);
+		@media (max-width: 500px) {
+			justify-content: space-around;
+		}
+		p{
+			font-size: 12px;
+			padding: 9px 12px 9px 34px;
+			border: 1px solid #E1E1E1;
+			position: relative;
+			border-radius: 15px;
+			&::before{
+				content: '';
+				position: absolute;
+				top: 6px;
+				left: 8px;
+				width: 20px;
+				height: 20px;
+			}
+		}
+		p:nth-child(1)::before{
+			background: url("@img/icons/force.svg") 0 0 no-repeat;
+		}
+		p:nth-child(2)::before{
+			background: url("@img/icons/fuel.svg") 0 0 no-repeat;
+		}
+		p:nth-child(3)::before{
+			background: url("@img/icons/speed.svg") 0 0 no-repeat;
+		}
+		p:nth-child(4)::before{
+			background: url("@img/icons/stopwatch.svg") 0 0 no-repeat;
+		}
+	}
+	&__buy {
+		display: flex;
+		height: 50px;
+		position: relative;
+		button{
+			//width: 150px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			font-weight: 700;
+			color: #fff;
+			transition: all 0.3s ease 0s;
+			clip-path: polygon(0% 0%, 88% 0, 100% 50%, 88% 100%, 0% 100%);
+			position: absolute;
+			height: 100%;
+			//width: 160px;
+			width: 37%;
+			@media (max-width: 500px) {
+				font-size: 11px;
+				font-weight: 400;
+			}
+		}
+		button:nth-child(1){
+			background-color: $red;
+			left: 0;
+			z-index: 2;
+			&:hover{
+				background-color: #A90100;
+			}
+		}
+		button:nth-child(2){
+			background-color: #262626;
+			right: 31%;
+			z-index: 1;
+			&:hover{
+				background-color: #000;
+			}
+		}
+		button:nth-child(3){
+			background-color: $gray;
+			right: 0;
+			top: 0;
+			&:hover{
+				background-color: #5d5d5d;
+			}
+		}
+	}
+}
+
+//? head-cars =================//
+
+.head-cars {
+	display: flex;
+	justify-content: space-between;
+	&__name {
+		@include adaptiveValue("font-size", 27, 20);
+		font-weight: 700;
+	}
+	&__add {
+		display: flex;
+		gap: 15px;
+	}
+	&__like, &__range {
+		position: relative;
+		height: 23px;
+		svg path{
+			transition: all 0.3s ease 0s;
+		}
+		&:hover svg path{
+			stroke: $red;
+		}
+		&._active svg path{
+			fill: $red;
+			stroke: $red;
+		}
+	}
+	&__range {
+	}
+}
+
+.like-check:hover::after{
+	content: attr(data-title);
+	position: absolute;
+	top: -20px;
+	left: -25px;
+	width: 70px;
+	font-size: 10px;
+	color: $red;
+	font-weight: 300;
+}
+
+//? profit-cars =================//
+
+.profit-cars {
+	background: url('@img/home-page/cars/bg01.png') 100% 0 no-repeat;
+
+	@include adaptiveValue("padding-top", 25, 15);
+	@include adaptiveValue("padding-bottom", 25, 15);
+	&__offer {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+		padding-bottom: 10px;
+	}
+	&__button {
+		background: url('@img/home-page/cars/arrow-bg.svg') 0 0 no-repeat ;
+		width: 160px;
+		height: 28px;
+		color: #fff;
+		font-size: 14px;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			background: url('@img/home-page/cars/arrow-bg-active.svg') 0 0 no-repeat ;
+		}
+	}
+	&__value {
+		color: $red;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 120%;
+	}
+	&__gift {
+		font-size: 14px;
+		line-height: 120%;
+		margin-bottom: 9px;
+		display: flex;
+		align-items: center;
+		p:first-child{
+			background-color: #000;
+			height: 32px;
+			width: 32px;
+			position: relative;
+			border-radius: 50%;
+			display: inline-block;
+			margin-right: 10px;
+			&::after{
+				content: '';
+				position: absolute;
+				background: url('@img/icons/gift.svg') 50% 50% no-repeat;
+				top: 0;
+				left: 0;
+				width: 32px;
+				height: 32px;
+			}
+		}
+		span {
+			color: $red;
+		}
+	}
+}
+
+.gift{
+	&__wrapper{
+		position: relative;
+		z-index: 1;
+	}
+	&__box{
+		position: relative;
+		img{
+			position: absolute;
+			top: 20px;
+			right: 0px;
+			//width: 55%;
+			width: 273px;
+			height: 100%;
+			object-fit: contain;
+			@media (max-width: 500px) {
+				width: 140px;
+				right: -15px;
+			}
+		}
+	}
+}
+
+
+
+//? price-car =================//
+
+.price-car {
+	display: flex;
+	justify-content: space-between;
+	&__cost {
+		@include adaptiveValue("font-size", 22, 20);
+		font-weight: 700;
+	}
+	&__credit {
+		font-size: 12px;
+		text-align: right;
+		padding-bottom: 16px;
+		p{
+			padding-top: 5px;
+			font-weight: 700;
+		}
+	}
+}
+.block__more{
+	height: 65px;
+	width: 312px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	@media (max-width: 767px) {
+		display: none;
+	}
 }

@@ -152,7 +152,14 @@ import './libs/select.js'
 Документация по работе в шаблоне:
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+
+function startFunk() {
+	var w = window.innerWidth;
+	if (w > 767) {
+		flsFunctions.showMore();
+	}
+}
+startFunk()
 
 /*
 Попапы
