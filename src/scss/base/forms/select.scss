@@ -2,11 +2,13 @@
 // Снипет (HTML): sel
 .select {
 	position: relative;
+
 	// .select__body
 	&__body {
 		position: relative;
-		
+
 	}
+
 	// .select__title
 	&__title {
 		color: inherit;
@@ -18,6 +20,7 @@
 		height: 65px;
 		border-radius: 4px;
 	}
+
 	// .select__value
 	&__value {
 		display: flex;
@@ -25,9 +28,11 @@
 		height: rem(30);
 		padding: 0 rem(15);
 		gap: rem(10);
-		> * {
+
+		>* {
 			flex: 1 1 auto;
 		}
+
 		&:after {
 			content: "";
 			align-self: stretch;
@@ -36,10 +41,12 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
 			._select-open & {
 				transform: rotate(-180deg);
 			}
 		}
+
 		&._select-pseudo-label {
 			&::before {
 				content: attr(data-pseudo-label);
@@ -47,15 +54,18 @@
 			}
 		}
 	}
+
 	// .select__text
 	&__text {
 		flex: 1 1 auto;
 	}
+
 	&__input {
 		width: 100%;
 		background-color: transparent;
 		height: 100%;
 	}
+
 	// .select__options
 	&__options {
 		color: #000;
@@ -70,12 +80,14 @@
 		border-top: 0;
 		padding: 10px 0px 5px 0px;
 	}
+
 	// .select__scroll
 	&__scroll {
 		overflow-y: auto;
 		overflow-x: hidden;
 		// Максимальная высота
 		max-height: 200px;
+
 		// Стили скроллбара
 		.simplebar-scrollbar {
 			&::before {
@@ -83,6 +95,7 @@
 			}
 		}
 	}
+
 	// .select__option
 	&__option {
 		width: 100%;
@@ -91,9 +104,11 @@
 		cursor: pointer;
 		padding: 5px 15px;
 		color: inherit;
+
 		&._select-selected {
 			background-color: #eee;
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				background: #d9d9d9;
@@ -106,25 +121,25 @@
 		display: inline-flex;
 		align-items: center;
 	}
-	&__asset {
-	}
-	&__text {
-	}
+
+	&__asset {}
+
+	&__text {}
 
 	// Состояния селекта
 	&._select-open {
 		z-index: 5;
 	}
-	&._select-disabled {
-	}
-	&._select-active {
-	}
-	&._select-focus {
-	}
-	&._select-multiple {
-	}
-	&._select-checkbox {
-	}
+
+	&._select-disabled {}
+
+	&._select-active {}
+
+	&._select-focus {}
+
+	&._select-multiple {}
+
+	&._select-checkbox {}
 }
 
 // Тег
@@ -134,78 +149,91 @@
 
 //* select-auto__select-lists =================//
 
-.select-lists{
-	&__item{
-	outline: 1px solid #E1E1E1;
-	height: 65px;
-	flex: 0 1 50%;
-	@include adaptiveValue("font-size", 16, 14);
-	@media (max-width: 500px) {
-		height: 40px;
+.select-lists {
+	&__item {
+		outline: 1px solid #E1E1E1;
+		height: 65px;
+		flex: 0 1 50%;
+
+		@include adaptiveValue("font-size", 16, 14);
+
+		@media (max-width: 500px) {
+			height: 40px;
+		}
 	}
+
+	.select__value {}
+
+	.select {
+		height: 100%;
 	}
-.select__value {
-}
-.select{
-	height: 100%;
-}
-.select__options{
-	top: 65px;
-	padding-top: 2px;
-	@media (max-width: 500px) {
-		top: 40px;
+
+	.select__options {
+		top: 65px;
+		padding-top: 2px;
+
+		@media (max-width: 500px) {
+			top: 40px;
+		}
 	}
-}
-.select__option{
-	&:hover{
-		color: $red;
-		background-color: #d2d2d2;
+
+	.select__option {
+		&:hover {
+			color: $red;
+			background-color: #d2d2d2;
+		}
 	}
-}
-.select__content{
-	position: relative;
-	&::after{
-		content: '';
-		position: absolute;
-		top: 4px;
-		right: 0;
-		width: 1px;
-		height: 10px;
-		background-color: #000;
-		transform: rotate(45deg);
-		transition: all 0.3s ease 0s;
+
+	.select__content {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 4px;
+			right: 0;
+			width: 1px;
+			height: 10px;
+			background-color: #000;
+			transform: rotate(45deg);
+			transition: all 0.3s ease 0s;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 4px;
+			right: 7px;
+			width: 1px;
+			height: 10px;
+			background-color: #000;
+			transform: rotate(-45deg);
+			transition: all 0.3s ease 0s;
+		}
 	}
-	&::before{
-		content: '';
-		position: absolute;
-		top: 4px;
-		right: 7px;
-		width: 1px;
-		height: 10px;
-		background-color: #000;
-		transform: rotate(-45deg);
-		transition: all 0.3s ease 0s;
+
+	.select._select-open .select__content {
+		&:after {
+			//transform: rotate(-225deg);
+			transform: rotate(-135deg);
+		}
+
+		&:before {
+			//transform: rotate(225deg);
+			transform: rotate(135deg);
+		}
 	}
-}
-.select._select-open .select__content{
-	&:after{
-		//transform: rotate(-225deg);
-		transform: rotate(-135deg);
+
+	.select__title {
+		@media (max-width: 500px) {
+			height: 40px;
+		}
 	}
-	&:before{
-		//transform: rotate(225deg);
-		transform: rotate(135deg);
+
+	.select__value {
+		padding: 0px;
+		padding-left: 10px;
 	}
-}
-.select__title{
-	@media (max-width: 500px) {
-		height: 40px;
-	}
-}
-.select__value{
-	padding: 0px;
-	padding-left: 10px;
-}
 
 
 }

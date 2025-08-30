@@ -23,7 +23,7 @@ $(document).ready(function () {
 });
 */
 
-// New Slider ====================================================================================================//
+// Slider main-screen====================================================================================================//
 
 $(document).ready(function () {
 	$('.main-screen__box').slick({
@@ -46,3 +46,19 @@ $(document).ready(function () {
 
 	});
 });
+
+// Slider collections====================================================================================================//
+
+$(document).ready(function () {
+	$('.slider-content').slick({
+		arrows: true, // стрелки
+		dots: false, // точки
+		slidesToShow: 3, // кол-во показ. слайдов
+		slidesToScroll: 1, // кол-во прокручиваемых слайдов за раз
+		speed: 500, // скорость (400)
+		//spaceBetween: 40,
+		//autoplay: true, // автовоспроизведение (false)
+		//autoplaySpeed: 500, // скорость (3000)
+	});
+});
+
