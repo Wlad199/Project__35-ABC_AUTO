@@ -81,37 +81,118 @@
 }
 
 
-//.top-slider {
+// input =================//
+input {
+	height: 65px;
+	padding: 10px;
+	padding-left: 22px;
+	outline-color: $red;
+	@include adaptiveValue("font-size", 26, 20);
+}
 
-//	&__buttons {
-//		display: flex;
-//		align-items: center;
-//		gap: 12px;
 
-//		button {
-//			padding: 0;
-//			margin: 0;
-//			height: 48px;
-//			width: 48px;
-//			border-radius: 5px;
-//			box-shadow: 0px 0px 10px 0px #8b8b8b;
-//			transition: all 0.2s ease 0s;
+//? rating  =================//
 
-//			svg path {
-//				transition: all 0.2s ease 0s;
-//			}
+.rating {
+	@include adaptiveValue("margin-top", 80, 40);
 
-//			&:first-child {
-//				padding-top: 4px;
-//			}
+	&__container {}
 
-//			&:hover {
-//				background-color: $red;
+	&__box {
+		@media (min-width: 768px) {
+			display: flex;
+			gap: 30px;
+		}
 
-//				svg path {
-//					fill: #fff;
-//				}
-//			}
-//		}
-//	}
-//}
+	}
+
+	&__item {
+		background-color: #EFF0F0;
+		border-radius: 10px;
+		padding: 35px;
+		flex: 1 1 100%;
+
+		@media (max-width: 768px) {
+			margin-bottom: 30px;
+		}
+
+		@media (max-width: 400px) {
+			padding: 10px;
+		}
+	}
+}
+
+.item-rating {
+
+	@media (min-width: 1250px) {
+		display: flex;
+		gap: 15px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		margin-bottom: 12px;
+	}
+
+	&__name {
+		font-size: 20px;
+		color: $gray;
+
+		@media (max-width: 1250px) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__quality {
+		display: flex;
+		gap: 30px;
+		align-items: center;
+	}
+
+	&__text {
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: 12px;
+
+	}
+
+	&__stars {
+		text-align: center;
+	}
+
+	&__rating {
+		background-color: #55BC6B;
+		width: 120px;
+		height: 70px;
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 43px;
+		line-height: 0;
+		color: #fff;
+	}
+}
+
+
+//? maps =================//
+
+.maps {
+	@include adaptiveValue("margin-top", 60, 20);
+
+	&__container {}
+
+	&__content {
+		position: relative;
+		padding-bottom: 35%;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
