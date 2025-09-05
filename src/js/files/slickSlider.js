@@ -32,8 +32,8 @@ $(document).ready(function () {
 		slidesToShow: 1, // кол-во показ. слайдов
 		slidesToScroll: 1, // кол-во прокручиваемых слайдов за раз
 		speed: 500, // скорость (400)
-		//autoplay: false, // автовоспроизведение (false)
-		//autoplaySpeed: 1000, // скорость (3000)
+		autoplay: true, // автовоспроизведение (false)
+		autoplaySpeed: 2000, // скорость (3000)
 
 		responsive: [
 			{
@@ -56,9 +56,8 @@ $(document).ready(function () {
 		slidesToShow: 3, // кол-во показ. слайдов
 		slidesToScroll: 1, // кол-во прокручиваемых слайдов за раз
 		speed: 500, // скорость (400)
-		//spaceBetween: 40,
-		//autoplay: true, // автовоспроизведение (false)
-		//autoplaySpeed: 500, // скорость (3000)
+		autoplay: true, // автовоспроизведение (false)
+		autoplaySpeed: 2000, // скорость (3000)
 	});
 });
 

@@ -1,3 +1,209 @@
 //====================================================================================================
 
 //====================================================================================================
+.footer {
+	background-color: #262626;
+
+	.menu {
+		&__top {
+			padding: 40px 0;
+			color: #fff;
+			position: relative;
+
+			@media (max-width: 992px) {
+				display: none;
+			}
+
+			a::after {
+				background-color: $red;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: #fff;
+			}
+		}
+
+		&__list {
+			justify-content: space-around;
+			font-size: 18px;
+		}
+	}
+
+	&__center {
+		color: #737373;
+		@include adaptiveValue("margin-top", 60, 40);
+		@include adaptiveValue("margin-bottom", 60, 40);
+		display: flex;
+		gap: 15px;
+		font-size: 16px;
+
+		@media (max-width: 400px) {
+			display: block;
+		}
+	}
+
+	&__catalog {
+		flex: 0 1 60%;
+	}
+
+	&__credit {
+		flex: 0 1 20%;
+
+		@media (max-width: 992px) {
+			flex: 0 1 50%;
+		}
+
+		@media (max-width: 400px) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__contacts {
+		flex: 0 1 20%;
+
+		@media (max-width: 992px) {
+			flex: 0 1 50%;
+		}
+	}
+
+	&__bottom {
+		background-color: #000;
+		@include adaptiveValue("padding-top", 40, 20);
+		@include adaptiveValue("padding-bottom", 40, 20);
+		color: #737373;
+	}
+}
+
+.catalog-footer {
+	@media (max-width: 992px) {
+		display: none;
+	}
+
+	&__title {}
+
+	&__cars {
+		.marks-select__item {
+			margin-bottom: 15px;
+		}
+
+		a {
+			cursor: pointer !important;
+		}
+	}
+}
+
+.footer-title {
+	color: #fff;
+	margin-bottom: 30px;
+
+	@media (max-width: 400px) {
+		margin-bottom: 25px;
+	}
+}
+
+.credit-footer {
+	&__title {}
+
+	&__list {}
+
+	&__item {
+		margin-bottom: 15px;
+		display: inline-block;
+
+		&::after {
+			background-color: $red;
+		}
+
+		&:hover {
+			color: $red;
+		}
+	}
+}
+
+.contacts-footer {
+	&__title {}
+
+	&__list {}
+
+	&__item {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		margin-bottom: 15px;
+
+		a:hover {
+			color: $red;
+		}
+	}
+
+	&__icon {}
+
+	&__link {
+		line-height: 120%;
+
+
+
+		&::after {
+			background-color: $red;
+		}
+	}
+}
+
+
+.bottom-footer {
+	&__box {
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		align-items: center;
+
+		@media (max-width: 992px) {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	&__policy {
+		flex: 0 0 40%;
+	}
+
+	&__info {
+		flex: 1 1 auto
+	}
+
+	&__image {
+		@media (max-width: 992px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__copy {
+		font-size: 18px;
+		color: #fff;
+		margin-bottom: 22px;
+	}
+
+	&__link-box {
+		display: flex;
+		gap: 15px;
+
+		a {
+			cursor: pointer;
+		}
+
+		@media (max-width: 992px) {
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__link {}
+
+	&__text {}
+}
